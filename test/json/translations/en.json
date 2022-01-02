@@ -1,0 +1,9 @@
+{
+  "title": "Parser",
+  "test": "Test, with comma",
+  "meta": {
+    "object": {
+      "entry": "Object"
+    }
+  }
+}

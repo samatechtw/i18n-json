@@ -1,0 +1,12 @@
+{
+  "title": "Parser",
+  "test": "테스트(쉼표 포함)",
+  "en_only": {
+    "lang": "English"
+  },
+  "meta": {
+    "object": {
+      "entry": "물체"
+    }
+  }
+}
