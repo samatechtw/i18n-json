@@ -1,6 +1,6 @@
 {
   "name": "@samatech/i18n-json",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Convert i18n translation files between json and csv",
   "main": "bin/i18n-json.js",
   "types": "dist/i18n-json.d.ts",
