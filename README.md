@@ -10,29 +10,40 @@ We recommend [PNPM](https://github.com/pnpm/pnpm) for reducing disk usage and sp
 `npm` may be substituted with `pnpm` in the following commands:
 
 **Install**
+
 ```
 pnpm install
 ```
 
-**Run example**
+**Run tests**
+
 ```
-pnpm run example:json
-pnpm run example:csv
+pnpm run test
 ```
 
 **Build library**
+
 ```
 pnpm run build
 ```
 
 **Run on local project**
 
-Convert JSON to CSV
+Convert single JSON file to CSV
+
 ```
-node dist/i18n-json.js --to-csv example -o ./example
+node ./bin/i18n-json.js -i ./test/json/translations/en.json -o ./test/output
+```
+
+Convert folder of JSON files to CSV, with `en.json` fallback
+
+```
+node ./bin/i18n-json.js -i ./test/json/translations -o ./test/output -f en.json
 ```
 
 Convert CSV to JSON
+
 ```
-node dist/i18n-json.js --to-json example -o ./output
+node ./bin/i18n-json.js -i ./test/csv/translations/en.csv -o ./test/output
+node ./bin/i18n-json.js -i ./test/csv/translations/en_kr.csv -o ./test/output
 ```

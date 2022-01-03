@@ -1,5 +1,5 @@
 key,en,kr
-title,Parser,파서
+title,Parser,Parser
 test,"Test, with comma",테스트(쉼표 포함)
 en_only.lang,English,
 meta.object.entry,Object,물체

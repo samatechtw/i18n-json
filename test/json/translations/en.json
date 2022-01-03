@@ -1,6 +1,9 @@
 {
   "title": "Parser",
   "test": "Test, with comma",
+  "en_only": {
+    "lang": "English"
+  },
   "meta": {
     "object": {
       "entry": "Object"

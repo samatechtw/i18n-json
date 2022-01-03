@@ -2,10 +2,10 @@
   "name": "@samatech/i18n-json",
   "version": "0.1.0",
   "description": "Convert i18n translation files between json and csv",
-  "main": "dist/i18n-json.js",
+  "main": "bin/i18n-json.js",
   "types": "dist/i18n-json.d.ts",
   "bin": {
-    "i18n-json": "./bin/cli.js"
+    "i18n-json": "./bin/i18n-json.js"
   },
   "files": [
     "dist",
@@ -15,8 +15,7 @@
   "scripts": {
     "start": "node dist/index.js",
     "build": "rimraf dist && rimraf bin && mkdir bin && tsc && rollup -c rollup.config.js",
-    "test": "jest",
-    "bundle": "rollup -c rollup.config.js"
+    "test": "jest"
   },
   "repository": {
     "type": "git",

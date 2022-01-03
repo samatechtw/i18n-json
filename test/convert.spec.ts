@@ -4,7 +4,7 @@ import fs from 'fs'
 describe('Converts JSON i18n to CSV', () => {
   beforeAll(() => {
     if (fs.existsSync('./test/output')) {
-      fs.rmdirSync('./test/output', { recursive: true })
+      fs.rmSync('./test/output', { recursive: true })
     }
     expect(fs.existsSync('./test/output')).toBe(false)
   })
@@ -45,6 +45,25 @@ describe('Converts JSON i18n to CSV', () => {
 
     const expected = fs.readFileSync('./test/csv/translations/en.csv', 'utf-8')
     const result = fs.readFileSync('./test/output/en.csv', 'utf-8')
+    expect(result).toEqual(expected)
+  })
+
+  it('converts multiple translations to csv', async () => {
+    const p = path.resolve(__dirname, '..', 'src', 'cli.ts')
+    process.argv = [
+      'node',
+      p,
+      '-i',
+      './test/json/translations',
+      '-o',
+      './test/output',
+      '-f',
+      'en.json',
+    ]
+    await require('../src/cli')
+
+    const expected = fs.readFileSync('./test/csv/translations/en_kr.csv', 'utf-8')
+    const result = fs.readFileSync('./test/output/en_kr.csv', 'utf-8')
     expect(result).toEqual(expected)
   })
 

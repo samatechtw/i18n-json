@@ -34,7 +34,7 @@ export function toCsv(data: ConversionData) {
     }
     // Fill blank entries with empty string
     for (const [_key, entry] of flattened) {
-      if (entry.length !== i + 2) {
+      if (entry.length !== i + 1) {
         entry.push('')
       }
     }
@@ -59,7 +59,7 @@ export function toJson(data: ConversionData) {
 
   const entries = parseCsv(filesData)
   const header = entries[0]
-  console.log(filesData)
+
   if (!header.length || header[0].toLowerCase() !== 'key') {
     errorExit('Missing or corrupted header')
   }
