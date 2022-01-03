@@ -14,7 +14,10 @@ jobs:
         with:
           node-version: '14'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm ci
+      - uses: pnpm/action-setup@v2.0.1
+        with:
+          version: 6.0.2
+      - run: pnpm i
       - run: npm run build
       - run: npm publish --access public
         env:
